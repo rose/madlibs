@@ -32,7 +32,7 @@
       {'pretext': 'ing towards her ', 'model': 'Adverb 2'}
       ]">
       <span ng-repeat="chunk in chunks">
-        <input ng-model="$parent.chunks[$index].model">
+        <input ng-model="chunk.model" ng-init="name=chunk.model; chunk.model = ''" placeholder="{{name}}">
       </span>
     </div>
     <div class="madlibs">
