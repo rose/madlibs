@@ -17,16 +17,28 @@
       </div>
     </div>
     <div class="words" ng-init="chunks = [
-      {'pretext' = 'Once upon a time there was a little ', 'model': 'Noun 1'},
-      ]; blarg = 'blorp'">
-      {{blarg}}
+      {'pretext': 'Once upon a time there was a little ', 'model': 'Noun 1'},
+      {'pretext': ' named ', 'model': 'Proper Noun'},
+      {'pretext': '.  She was very ', 'model': 'Adjective 1'},
+      {'pretext': ' but also somewhat ', 'model': 'Adjective 2'},
+      {'pretext': '.  One day she went ', 'model': 'Verb 1'},
+      {'pretext': 'ing ', 'model': 'Adverb 1'},
+      {'pretext': ' through the ', 'model': 'Noun 2'},
+      {'pretext': ' to visit her ', 'model': 'Adjective 2'},
+      {'pretext': ' ', 'model': 'Person'},
+      {'pretext': '.  She had only gone ', 'model': 'Number'},
+      {'pretext': ' miles, when she saw a ', 'model': 'Noun 3'},
+      {'pretext': ' ', 'model': 'Verb'},
+      {'pretext': 'ing towards her. ', 'model': 'Adverb 2'}
+      ]">
       <span ng-repeat="chunk in chunks">
-        {{blarg}}
         <input ng-model="$parent.chunks[$index].model">
       </span>
     </div>
     <div class="madlibs">
-      foo
+      <span ng-repeat="chunk in chunks">
+        {{chunk.pretext}}{{chunk.model}}
+      </span>
     </div>
   </div>
 </body>
