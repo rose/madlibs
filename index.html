@@ -25,7 +25,9 @@
       {'type':'model', 'model': 'Adjective 1'},
       {'type': 'text', 'text':  ' but also somewhat '}, 
       {'type':'model', 'model': 'Adjective 2'},
-      {'type': 'text', 'text':  '.  One day she went '}, 
+      {'type': 'text', 'text':  '.  One day this '}, 
+      {'type':'dup', 'of': 1},
+      {'type': 'text', 'text':  ' went '}, 
       {'type':'model', 'model': 'Verb 1'},
       {'type': 'text', 'text':  'ing '}, 
       {'type':'model', 'model': 'Adverb 1'},
@@ -60,6 +62,14 @@
             --><span ng-switch="chunk.model"><!--
               --><span ng-switch-when=""><span>{{</span>{{chunk.title}}<span>}}</span></span><!--
               --><span ng-switch-default="">{{chunk.model}}</span><!--
+            --></span><!--
+          --></span><!--
+          --><span ng-switch-when="dup"><!--
+            --><span ng-init="original=$parent.chunks[chunk.of]"><!--
+              --><span ng-switch="original.model"><!--
+                --><span ng-switch-when=""><span>{{</span>{{original.title}}<span>}}</span></span><!--
+                --><span ng-switch-default="">{{original.model}}</span><!--
+              --></span><!--
             --></span><!--
           --></span><!--
         --></span><!--
