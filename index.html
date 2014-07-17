@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="container" ng-app="" ng-init="words = ['hello', 'world']">
+  <div class="container" ng-app="">
     <div class="header">
       <img class="logo" src="images/mad-lib-happy-face.png">
       <div class="title">
@@ -17,12 +17,24 @@
       </div>
     </div>
     <div class="words">
-      <div ng-repeat="word in words" class="word">
-        {{word}}
-      </div>
+      <input ng-model="noun3" placeholder="Noun">
+      <input ng-model="person1" placeholder="Person">
+      <input ng-model="adj4" placeholder="Adjective">
+      <input ng-model="pnoun1" placeholder="Proper Noun">
+      <input ng-model="adj1" placeholder="Adjective">
+      <input ng-model="adverb2" placeholder="Adverb">
+      <input ng-model="adj2" placeholder="Adjective">
+      <input ng-model="noun1" placeholder="Noun">
+      <input ng-model="verb1" placeholder="Verb">
+      <input ng-model="adverb1" placeholder="Adverb">
+      <input ng-model="verb2" placeholder="Verb">
+      <input ng-model="noun2" placeholder="Noun">
+      <input ng-model="adj3" placeholder="Adjective">
+      <input ng-model="num1" placeholder="Number">
     </div>
     <div class="madlibs">
-      madlib goes here
+      <p>Once upon a time there was a little <span class="placeholder">{{noun1}}</span> named <span class="placeholder">{{pnoun1}}</span>.  This <span class="placeholder">{{noun1}}</span> was very <span class="placeholder">{{adj1}}</span>, but also a little bit <span class="placeholder">{{adj2}}</span>.  One day she went <span class="placeholder">{{verb1}}</span>ing <span class="placeholder">{{adverb1}}</span> through the forest to visit her <span class="placeholder">{{adj3}}</span> <span class="placeholder">{{person1}}</span>.  When she had gone <span class="placeholder">{{num1}}</span> miles, she saw a <span class="placeholder">{{noun2}}</span> <span class="placeholder">{{verb2}}</span>ing towards her.</p>
+      <p>"Good <span class="placeholder">{{noun3}}</span>!" she said, and the <span class="placeholder">{{noun2}}</span> answered <span class="placeholder">{{adverb2}}</span>:  "A fine <span class="placeholder">{{adj4}}</span> morning to you, my dear!"</p>
     </div>
   </div>
 </body>

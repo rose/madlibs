@@ -58,3 +58,10 @@
   border: solid;
   border-width: 2px;
 }
+
+.placeholder {
+  background: #eee;
+  display: inline-block;
+  min-width: 3em;
+  min-height: .6em;
+}
