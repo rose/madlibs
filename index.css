@@ -2,18 +2,14 @@
   margin: 0;
   padding: 0;
   border: 0;
+
   font: inherit;
+  background: white;
+
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-}
-
-body {
-  background: white;
-}
-
-div {
 }
 
 .container {
@@ -36,7 +32,6 @@ div {
   border-width: 2px 4px 2px 2px;
   width: 150px;
   float: left;
-  background: white;
   z-index: 1;
 }
 
@@ -45,17 +40,14 @@ div {
   border-width: 2px;
   width: 100%;
   padding-left: 150px;
-  background: white;
 }
 
 .words {
   border: solid;
   border-width: 2px;
-  background: white;
 }
 
 .madlibs {
   border: solid;
   border-width: 2px;
-  background: white;
 }
