@@ -32,13 +32,16 @@
       {'pretext': 'ing towards her ', 'model': 'Adverb 2'}
       ]">
       <span ng-repeat="chunk in chunks">
-        <input ng-model="chunk.model" ng-init="name=chunk.model; chunk.model = ''" placeholder="{{name}}">
+        <input ng-model="chunk.model" ng-init="chunk.title=chunk.model; chunk.model = ''" placeholder="{{chunk.title}}">
       </span>
     </div>
     <div class="madlibs">
-      <span ng-repeat="chunk in chunks"><!--
-        -->{{chunk.pretext}}<span>{{</span>{{chunk.model}}<span>}}</span><!--
-      --></span>.
+      <span ng-repeat="chunk in chunks">
+        <span ng-switch="chunk.model">
+          <span ng-switch-when=""><span>{{</span>{{chunk.title}}<span>}}</span></span>
+          <span ng-switch-default="">{{chunk.model}}</span>
+        </span>
+      </span>
     </div>
   </div>
 </body>
