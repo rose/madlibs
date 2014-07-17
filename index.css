@@ -4,12 +4,20 @@
   border: 0;
 
   font: inherit;
+  font-family: Verdana, Geneva, sans-serif;
   background: white;
 
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+input {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
 }
 
 .container {
@@ -52,16 +60,15 @@
 .words {
   border: solid;
   border-width: 2px;
+  min-height: 200px;
+  text-align: center;
+  padding: 30px;
 }
 
 .madlibs {
   border: solid;
   border-width: 2px;
-}
-
-.placeholder {
-  background: #eee;
-  display: inline-block;
-  min-width: 3em;
-  min-height: .6em;
+  min-height: 200px;
+  padding: 30px;
+  line-height: 1.5em;
 }
