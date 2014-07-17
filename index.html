@@ -16,14 +16,17 @@
         <div class="title-text">Automate This!</div>
       </div>
     </div>
-    <!-- div class="words" ng-init="names = [{'model':'Foo'}, {'model':'Bar'}]">
-      <div ng-repeat="name in names">
-        <input ng-model="$parent.names[$index].model">
-        <b color="red">hi {{$parent.names[$index].model}}</b>
+    <div class="words" ng-init="names = {
+        'fooname':{'model':'Foo'}, 
+        'barname':{'model':'Bar'}
+      }">
+      <div ng-repeat="(key, obj) in names">
+        <input ng-model="$parent.names[key].model">
+        <b color="red">hi {{$parent.names[key].model}}</b>
       </div>
-      {{names[1].model}}
-      <br><div class=placeholder></div><br-->
-    <div class="words" ng-init="names = [
+      {{names['fooname'].model}}
+      <br><div class=placeholder></div><br>
+    <!--div class="words" ng-init="names = [
       {'model': 'Noun 3'},
       {'model': 'Adjective 4'},
       {'model': 'Pronoun'},
@@ -41,7 +44,7 @@
       ]">
       <span ng-repeat="name in names">
         <input ng-model="$parent.names[$index].model">
-      </span>
+      </span-->
       <!--input ng-model="noun3" placeholder="Noun">
       <input ng-model="person1" placeholder="Person">
       <input ng-model="adj4" placeholder="Adjective">
