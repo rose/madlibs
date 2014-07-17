@@ -29,16 +29,16 @@
       {'pretext': '.  She had only gone ', 'model': 'Number'},
       {'pretext': ' miles, when she saw a ', 'model': 'Noun 3'},
       {'pretext': ' ', 'model': 'Verb'},
-      {'pretext': 'ing towards her. ', 'model': 'Adverb 2'}
+      {'pretext': 'ing towards her ', 'model': 'Adverb 2'}
       ]">
       <span ng-repeat="chunk in chunks">
         <input ng-model="$parent.chunks[$index].model">
       </span>
     </div>
     <div class="madlibs">
-      <span ng-repeat="chunk in chunks">
-        {{chunk.pretext}}{{chunk.model}}
-      </span>
+      <span ng-repeat="chunk in chunks"><!--
+        -->{{chunk.pretext}}<span>{{</span>{{chunk.model}}<span>}}</span><!--
+      --></span>.
     </div>
   </div>
 </body>
