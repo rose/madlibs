@@ -36,12 +36,13 @@
       </span>
     </div>
     <div class="madlibs">
-      <span ng-repeat="chunk in chunks">
-        <span ng-switch="chunk.model">
-          <span ng-switch-when=""><span>{{</span>{{chunk.title}}<span>}}</span></span>
-          <span ng-switch-default="">{{chunk.model}}</span>
-        </span>
-      </span>
+      <span ng-repeat="chunk in chunks"><!--
+        -->{{chunk.pretext}}<!--
+        --><span ng-switch="chunk.model"><!--
+          --><span ng-switch-when=""><span>{{</span>{{chunk.title}}<span>}}</span></span><!--
+          --><span ng-switch-default="">{{chunk.model}}</span><!--
+        --></span><!--
+      --></span>.
     </div>
   </div>
 </body>
