@@ -5,75 +5,28 @@
   <title></title>
   <!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script-->
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="index.js"></script>
   <link rel="stylesheet" href="index.css">
 </head>
-<body>
-  <div class="container" ng-app="" >
+<body ng-app="madlib"> 
+  <div class="container" ng-controller="MadCtrl"> 
     <div class="header">
       <img class="logo" src="images/mad-lib-happy-face.png">
       <div class="title">
         <img height="60px" src="images/ng-mad-libs-logo.png">
-        <div class="title-text">Automate This!</div>
+        <div class="title-text">{{ title }}</div>
       </div>
     </div>
-    <div class="words" ng-init="chunks = [
-      {'type': 'text', 'text':  'Once upon a time there was a little '}, 
-      {'type':'model', 'model': 'Noun 1'},
-      {'type': 'text', 'text':  ' named '}, 
-      {'type':'model', 'model': 'Proper Noun'},
-      {'type': 'text', 'text':  '.  She was very '}, 
-      {'type':'model', 'model': 'Adjective 1'},
-      {'type': 'text', 'text':  ' but also somewhat '}, 
-      {'type':'model', 'model': 'Adjective 2'},
-      {'type': 'text', 'text':  '.  One day this '}, 
-      {'type':'dup', 'of': 1},
-      {'type': 'text', 'text':  ' went '}, 
-      {'type':'model', 'model': 'Verb 1'},
-      {'type': 'text', 'text':  'ing '}, 
-      {'type':'model', 'model': 'Adverb 1'},
-      {'type': 'text', 'text':  ' through the '}, 
-      {'type':'model', 'model': 'Noun 2'},
-      {'type': 'text', 'text':  ' to visit her '}, 
-      {'type':'model', 'model': 'Adjective 2'},
-      {'type': 'text', 'text':  ' '}, 
-      {'type':'model', 'model': 'Person'},
-      {'type': 'text', 'text':  '.  She had only gone '}, 
-      {'type':'model', 'model': 'Number'},
-      {'type': 'text', 'text':  ' miles, when she saw a '}, 
-      {'type':'model', 'model': 'Noun 3'},
-      {'type': 'text', 'text':  ' '}, 
-      {'type':'model', 'model': 'Verb'},
-      {'type': 'text', 'text':  'ing towards her '}, 
-      {'type':'model', 'model': 'Adverb 2'}
-      ]">
-      <span ng-repeat="chunk in chunks">
-        <span ng-switch="chunk.type">
-          <span ng-switch-when="model">
-            <input ng-model="chunk.model" ng-init="chunk.title=chunk.model; chunk.model = ''" placeholder="{{chunk.title}}">
-          </span>
-        </span>
+    <div class="words">
+      <span ng-repeat="chunk in chunks | filter: {type: 'model'}">
+        <input 
+          ng-model="chunk.model" 
+          ng-init="chunk.title=chunk.model; chunk.model = ''" 
+          placeholder="{{chunk.title}}">
       </span>
     </div>
     <div class="madlibs">
-      <span ng-repeat="chunk in chunks"><!--
-        --><span ng-switch="chunk.type"><!--
-          --><span ng-switch-when="text">{{chunk.text}}</span><!--
-          --><span ng-switch-when="model"><!--
-            --><span ng-switch="chunk.model"><!--
-              --><span ng-switch-when=""><span>{{</span>{{chunk.title}}<span>}}</span></span><!--
-              --><span ng-switch-default="">{{chunk.model}}</span><!--
-            --></span><!--
-          --></span><!--
-          --><span ng-switch-when="dup"><!--
-            --><span ng-init="original=$parent.chunks[chunk.of]"><!--
-              --><span ng-switch="original.model"><!--
-                --><span ng-switch-when=""><span>{{</span>{{original.title}}<span>}}</span></span><!--
-                --><span ng-switch-default="">{{original.model}}</span><!--
-              --></span><!--
-            --></span><!--
-          --></span><!--
-        --></span><!--
-      --></span>.
+      <span ng-repeat="chunk in chunks">{{ display(chunk) }}</span>
     </div>
   </div>
 </body>
