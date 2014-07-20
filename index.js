@@ -40,9 +40,9 @@
         'model': function() { return content_or_placeholder(chunk) },
         'dup': 
           function() { 
-          var original = $scope.chunks[chunk.of]
-          return content_or_placeholder(original)
-        }
+            var original = $scope.chunks[chunk.of]
+            return content_or_placeholder(original)
+          }
       }[chunk.type]());
     }
 
