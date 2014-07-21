@@ -83,3 +83,11 @@ input {
   text-align: center;
   right: -70%;
 }
+
+.error {
+  border: solid;
+  border-width: 2px;
+  background: red;
+  text-align: center;
+  font-size: 200%;
+}
