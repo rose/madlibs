@@ -32,6 +32,9 @@
       </span>
       <div class="button"><button type="submit">Generate</button></div>
     </form>
+    <div class="error" ng-show="error">
+      Please Fill All Fields!
+    </div>
     <div class="madlibs" ng-show="done">
       <span ng-repeat="chunk in chunks">{{ display(chunk) }}</span>
       <div class="button" ng-click="reset()">Start Over</div>

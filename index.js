@@ -47,15 +47,14 @@
     }
 
     $scope.done = false
+    $scope.error = false
 
     $scope.generate = function(valid) {
       if (valid) {
-        alert("yay")
-        $scope.errorMsg = false
+        $scope.error = false
         $scope.done = true
       } else {
-        alert("boo")
-        $scope.errorMsg = true
+        $scope.error = true
       }
     }
 
