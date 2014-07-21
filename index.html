@@ -27,7 +27,7 @@
         <input 
           ng-model="chunk.model" 
           placeholder="{{chunk.title}}"
-          ng-class="{ 'invalid' : error && chunk.model == '' }"
+          ng-class="{ 'invalid' : !chunk.model && error }"
           required>
       </span>
       <div class="button"><button type="submit">Generate</button></div>
