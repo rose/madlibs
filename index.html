@@ -24,9 +24,11 @@
           ng-init="chunk.title=chunk.model; chunk.model = ''" 
           placeholder="{{chunk.title}}">
       </span>
+      <div class="button" ng-click="generate()">Generate</div>
     </div>
     <div class="madlibs">
       <span ng-repeat="chunk in chunks">{{ display(chunk) }}</span>
+      <div class="button" ng-click="reset()">Start Over</div>
     </div>
   </div>
 </body>
