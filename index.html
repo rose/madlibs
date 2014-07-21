@@ -28,6 +28,7 @@
           ng-model="chunk.model" 
           ng-init="chunk.title=chunk.model; chunk.model = ''" 
           placeholder="{{chunk.title}}"
+          ng-class="{ 'invalid' : error && chunk.model == '' }"
           required>
       </span>
       <div class="button"><button type="submit">Generate</button></div>

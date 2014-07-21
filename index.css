@@ -91,3 +91,7 @@ input {
   text-align: center;
   font-size: 200%;
 }
+
+.invalid {
+  border-color: red;
+}
