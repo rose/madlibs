@@ -59,6 +59,12 @@
     }
 
     $scope.reset = function() {
+      for (var i = 0; i < $scope.chunks.length; i++) {
+        var chunk = $scope.chunks[i]
+        if (chunk.type === 'model') {
+          chunk.model = ''
+        }
+      }
       $scope.done = false
     }
 
