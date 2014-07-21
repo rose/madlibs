@@ -25,12 +25,12 @@
         ng-show="!done">
       <span ng-repeat="chunk in chunks | filter: {type: 'model'}">
         <input 
-          ng-model="chunk.model" 
-          placeholder="{{chunk.title}}"
-          ng-class="{ 'invalid' : !chunk.model && error }"
-          required>
+            ng-model="chunk.model" 
+            placeholder="{{chunk.title}}"
+            ng-class="{ 'invalid' : !chunk.model && error }"
+            required>
       </span>
-      <div class="button"><button type="submit">Generate</button></div>
+      <div class="button-positioner"><button type="submit">Generate</button></div>
     </form>
     <div class="error" ng-show="error">
       Please Fill All Fields!
