@@ -17,15 +17,21 @@
         <div class="title-text">{{ title }}</div>
       </div>
     </div>
-    <div class="words" ng-show="!done">
+    <form 
+        name="wordForm" 
+        ng-submit="generate(wordForm.$valid)" 
+        novalidate 
+        class="words" 
+        ng-show="!done">
       <span ng-repeat="chunk in chunks | filter: {type: 'model'}">
         <input 
           ng-model="chunk.model" 
           ng-init="chunk.title=chunk.model; chunk.model = ''" 
-          placeholder="{{chunk.title}}">
+          placeholder="{{chunk.title}}"
+          required>
       </span>
-      <div class="button" ng-click="generate()">Generate</div>
-    </div>
+      <div class="button"><button type="submit">Generate</button></div>
+    </form>
     <div class="madlibs" ng-show="done">
       <span ng-repeat="chunk in chunks">{{ display(chunk) }}</span>
       <div class="button" ng-click="reset()">Start Over</div>

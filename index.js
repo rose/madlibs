@@ -48,8 +48,15 @@
 
     $scope.done = false
 
-    $scope.generate = function() {
-      $scope.done = true
+    $scope.generate = function(valid) {
+      if (valid) {
+        alert("yay")
+        $scope.errorMsg = false
+        $scope.done = true
+      } else {
+        alert("boo")
+        $scope.errorMsg = true
+      }
     }
 
     $scope.reset = function() {
