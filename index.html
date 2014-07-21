@@ -26,7 +26,6 @@
       <span ng-repeat="chunk in chunks | filter: {type: 'model'}">
         <input 
           ng-model="chunk.model" 
-          ng-init="chunk.title=chunk.model; chunk.model = ''" 
           placeholder="{{chunk.title}}"
           ng-class="{ 'invalid' : error && chunk.model == '' }"
           required>
