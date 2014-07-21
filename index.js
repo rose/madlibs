@@ -46,12 +46,14 @@
       }[chunk.type]());
     }
 
+    $scope.done = false
+
     $scope.generate = function() {
-      console.log("Generate");
+      $scope.done = true
     }
 
     $scope.reset = function() {
-      console.log("Reset");
+      $scope.done = false
     }
 
     var content_or_placeholder = function(chunk) {
