@@ -46,6 +46,14 @@
       }[chunk.type]());
     }
 
+    $scope.generate = function() {
+      console.log("Generate");
+    }
+
+    $scope.reset = function() {
+      console.log("Reset");
+    }
+
     var content_or_placeholder = function(chunk) {
       return chunk.model === "" ?
         "{{ " + chunk.title + " }}" :
